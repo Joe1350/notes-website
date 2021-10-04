@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	<title>JS Notes</title>
+    <?head>
+    <body>
+	<h2>JavaScript Notes</h2>
+	<section>
+	    <ol>
+		<li>expression: what you put in</li>
+		    <ul>
+			<li>An expression in a programming language is like a sentence in a spoken 
+			    language.<br/>
+			    Some sentences are simple: "He wept." Some sentences are complex: "I sing 
+			    of weapons and a man, an outcast of Troy who was driven to the shores of 
+			    Italy..."<br/>
+			    Some expressions are simple: 2. Some expressions are complex 1 + 2. Some 
+			    expressions are really complex: 10 + (3 * ( (-1) ** 3) + 2) / 18.<br/>
+			    Definition: Expression: A combination of information, called data, and 
+			    symbols indicating how to combine data, called operators.
+			</li>
+		    </ul>
+		<li>evaluation: the computer thinking</li>
+		    <ul>
+			<li>Evaluation is the process of interpreting an expression, according to 
+			   rules, to produce a return value.
+			</li>
+		    </ul>
+		<li>return value: the computers answer</li>
+		<li>data=data</li>
+		<li>symbols=operators</li>
+		<li>essential three expressions</li>
+		    <ul>
+			<li>The constant expression</li>
+			    <ul>
+				<li>2=2, 9000=9000, etc</li>
+			    </ul>
+			<li>The assignment expression (variable assignment)</li>
+			    <ul>
+				<li>variableName=expressions</li>
+				<li>Variable names are most often descriptions of what their assigned 
+				    expressions mean. In JavaScript, when a variable name is made of 
+				    multiple words, every word after the first is capitalized. This 
+				    is referred to as camelCase and although it isn't strictly 
+				    required, it is a common convention in JavaScript.
+				</li>
+				<li>camelCaseIsLikeThis</li>
+				<li>snake_case_is_like_this</li>
+				<li>It's important to note that case matters, so javaScript, 
+				    javascript, JavaScript, and JAVASCRIPT are four different 
+				    variables.
+				</li>
+			    </ul>
+			<li>The variable lookup expression</li>
+		    </ul>
+		<li>Note: In JavaScript, it's optional to include a semi-colon at the end of each 
+		    line. You may encounter JavaScript expressions written both ways.
+		</li>
+		<li>SUPER-IMPORTANT: In the assignment expression = means "assignment". It does not 
+		    mean "what's on the left of the = is equal to what's on the right." In math 
+		    courses, we use = to say that the expressions on either side of the = are the 
+		    same. JavaScript uses == and === for that purpose. It's very common — and very 
+		    confusing — for beginners to have bugs where they confuse = for == or ===.
+		</li>
+		<li>A variable is said to be "mutable." That means the value that the name "points 
+		    to" can be changed during the running of the program. Being able to change the 
+		    value a variable points to is very important. For example, if we need to do 
+		    something 10 times, we need a variable to keep track of how many times the thing 
+		    happens. That variable will need to change: its value will need to increase by 1 
+		    each time.
+		</li>
+		<li>Any line that starts with // in JavaScript is a "comment": it's code that is 
+		    ignored by the JavaScript engine, but can be used to indicate something to other 
+		    developers looking at your code.
+		</li>
+		<li>when you see const, let, or var, those are reserved words that are used to 
+		    declare a variable.
+		</li>
+		<li>The main advantage of using let for declaring a variable is that, unlike var, it 
+		    will throw an error if you try to declare the same variable a second time
+		</li>
+		<li>The const reserved word should be your go-to option for declaring variables in 
+		    JavaScript. When you declare a variable with const, not only can it not be 
+		    redeclared but it also cannot be reassigned
+		</li>
+		<li>Use var... never.<br/>
+		    Use let... when you know the value of a variable will change. For example, a 
+		    counter variable that starts at 0 and is subsequently incremented to 1, 2, 3, and 
+		    so on. In the lessons on looping and iteration in JavaScript, let will have its 
+		    moment in the spotlight.<br/>
+		    Use const... for every other variable.
+		</li>
+		<li>Everything in JavaScript is data except:</li>
+		    <ul>
+			<li>Operators: +, !, <=, etc.</li>
+			<li>Reserved words: function, for, debugger, etc.</li>
+		    </ul>
+		<li>Every piece of data falls into one of JavaScript's seven data types: numbers, 
+		    strings, booleans, symbols, objects, null, and undefined.
+		</li>
+		    <ol>
+			<li>numbers</li>
+			    <ul>
+				<li>Some programming languages divide numbers up into integers, 
+				    decimals, doubles, floats, and so on. They do this so that they 
+				    can have higher precision in their calculations. In a banking 
+				    application or airplane wing engineering application we want our 
+				    interest rate or the curve of the wing to be as accurate as 
+				    possible. For good reason: we want to make sure we get paid or 
+				    have a safe plane! When JavaScript was created, this level of 
+				    precision was not thought to be a thing that would be needed, so 
+				    JavaScript only has a single, all-encompassing number type
+				</li>
+			    </ul>
+			<li>strings</li>
+			    <ul>
+				<li>Strings are how we represent text in JavaScript. A string consists 
+				    of a matching pair of 'single quotes', "double quotes", 
+				    or `backticks` with zero or more characters in between
+				</li>
+			    </ul>
+			<li>boolean</li>
+			    <ul>
+				<li>A boolean can only be one of two possible values: true or false. 
+				   Booleans play a big role in if statements and looping in 
+				   JavaScript.
+				</li>
+				<li>truthy/falsey: All values in Javascript, of any data type (String, 
+				    Number, etc.), are treated as either truthy or falsey.
+				</li>
+				    <ul>
+					<li>falsey</li>
+					    <ul>
+						<li>false</li>
+						<li>null</li>
+						<li>undefined</li>
+						<li>0</li>
+						<li>NaN</li>
+					    </ul>
+					<li>truthy</li>
+					    <ul>
+						<li>everything else</li>
+					    </ul>
+				    </ul>
+			    </ul>
+			<li>objects</li>
+			    <ul>
+				<li>A JavaScript object, unlike the types we've looked at so far, is 
+				   a collection of data rather than a single value. An object 
+				   consists of a list of properties, wrapped in curly braces {} and 
+				   separated by commas. Each property in the list consists of a 
+				   name — also known as a key — which points to a 
+				   value: "name": "JavaScript". The example below has four 
+				   properties, with the names (or keys) "name", "createdBy", 
+				   "firstReleased", and "isAwesome":
+
+				   const js = {
+				     name: "JavaScript",
+				     createdBy: {
+				       firstName: "Brendan",
+				       lastName: "Eich",
+				     },
+				     firstReleased: 1995,
+				     isAwesome: true,
+				   };
+
+				   typeof {};
+				   //=> "object"
+				</li>
+			    </ul>
+			<li>arrays</li>
+			    <ul>
+				<li>An array is just a list of values enclosed in square brackets: 
+				    ["Byron", "Cubby", "Boo Radley", "Luca"]. As with objects, the 
+				   values can be of any data type. In fact, from JavaScript's 
+				   perspective, arrays are just special cases of objects. We can see 
+				   that if we check the data type of our array
+				</li>
+			    </ul>
+			<li>null</li>
+			    <ul>
+				<li>The null data type represents an intentionally absent object. For 
+				   example, if a piece of code returns an object when it successfully 
+				   executes, we could have it return null in the event of an error. 
+				   Confusingly, the typeof operator returns "object" when called with 
+				   null
+				</li>
+			    </ul>
+			<li>undefined</li>
+			    <ul>
+				<li>The bane of many JS developers, undefined is a bit of a misnomer. 
+				   Instead of 'not defined,' it actually means something more like 
+				   not yet assigned a value. Any variable declared but not defined 
+				   will be undefined until a value is assigned.
+				</li>
+			    </ul>
+		    </ol>
+		<li>String interpolation is the process of injecting the value of an expression into 
+		    a String.
+		</li>
+		    <ul>
+			<li>The interpolation operator looks like this: ${}. When it appears in a 
+			    backtick-delimited String, the return value of the expression inside the 
+			    operator is "plugged in" to the containing String.
+			</li>
+			<li>In a single or double-quoted String there is no interpolation possible. 
+			    JavaScript would not interpret the value inside the ${}; instead, it 
+			    would create a literal string containing the operator and whatever 
+			    expression is inside it.
+			</li>
+			<li>const barkCount = 3;
+			    const backtick = `Byron barks ${barkCount} times`; //=> "Byron barks 3 times"
+			    const singleQuote = 'Byron barks ${barkCount} times'; //=> "Byron barks ${barkCount} times"
+			    const doubleQuote = "Byron barks ${barkCount} times"; //=> "Byron barks ${barkCount} times"
+			</li>
+		    </ul>
+		<li>use single quotations(') in order to use quotation marks within a string</li>
+		<li>use backslash(\) in front of a single(') or double(") quotation to <i>escape</i> 
+		    the delimiter.
+		</li>
+		<li>const firstName = "Byronius";
+		    const clanName = "Karbitus";
+		    const commonName = "Maris";
+		    let fullName;
+
+		    // With +
+		    fullName = firstName + " " + clanName + " " + commonName; //=> "Byronius Karbitus Maris"
+		    
+		    // Or, with interpolation
+		    fullName = `${firstName} ${clanName} ${commonName}`; //=> "Byronius Karbitus Maris"
+
+		    // Keep in mind it returns a _new_ String; therefore:
+		    firstName; //=> "Byronius"
+		    clanName; //=> "Karbitus"
+		    commonName; //=> "Maris"
+		    fullName; //=> "Byronius Karbitus Maris"
+		</li>
+		<li>strict equaility operator(===)</li>
+		<li>strict inequality operator(!==)</li>
+		<li>loose equality operator(==)</li>
+		<li>loose inequality operator(!=)</li>
+		<li>greater than(>)</li>
+		<li>greater than or equal to(>=)</li>
+		<li>less than(<)</li>
+		<li>less than or equal to(<=)</li>
+		<li>not operator(!) also called the bang operator</li>
+		    <ul>
+			<li>As a shorter way to convert any value into a Boolean, we can use two NOT operators</li>
+		    </ul>
+		<li>and operator(&&)</li>
+		    <ul>
+			<li>The return value of the && operator is always one of the two expressions. 
+			    If the first expression is falsey, && returns the value of the first 
+			    expression. If the first expression is truthy, && returns the value of 
+			    the second expression.
+			</li>
+		    </ul>
+		<table>
+		    <tr>
+			<th>left side</th>
+			<th>right side</th>
+			<th>return value</th>
+			<th>truthiness of return value</th>
+		    </tr>
+		    <tr>
+			<td>falsey</td>
+			<td>doesn't matter</td>
+			<td>left side</td>
+			<td>falsey</td>
+		    </tr>
+		    <tr>
+			<td>truthy</td>
+			<td>falsey</td>
+			<td>right side</td>
+			<td>falsey</td>
+		    </tr>
+		    <tr>
+			<td>truthy</td>
+			<td>truthy</td>
+			<td>right side</td>
+			<td>truthy</td>
+		    </tr>
+		</table>
+		<li>or operator(||)(shift+\)</li>
+		    <ul>
+			<li>the return value of the || operator is always one of the two expressions. 
+			    If the first expression is truthy, || returns the value of the first 
+			    expression. If the first expression is falsey, || returns the value of 
+			    the second expression.
+			</li>
+		    </ul>
+		<table>
+		    <tr>
+			<th>left side</th>
+			<th>right side</th>
+			<th>return value</th>
+			<th>truthiness of return value</th>
+		    </tr>
+		    <tr>
+			<td>truthy</td>
+			<td>doesn't matter</td>
+			<td>left side</td>
+			<td>truthy</td>
+		    </tr>
+		    <tr>
+			<td>falsey</td>
+			<td>truthy</td>
+			<td>right side</td>
+			<td>truthy</td>
+		    </tr>
+		    <tr>
+			<td>falsey</td>
+			<td>falsey</td>
+			<td>right side</td>
+			<td>falsey</td>
+		    </tr>
+		</table>
+		<li>ternary expresion</li
+		    <ul>
+			<li>booleanExpression ? "thingToReturnIfTrue" : "thingToReturnIfFalse";</li>
+		    </ul>
+		<li>statements</li>
+		    <ul>
+			<li>selection: Given the default order (or "sequence"), can we choose to run 
+			    certain lines of code and not others? How do we do so?
+			</li>
+			    <ul>
+				<li>The first selection tool we'll learn is if. The if statement 
+				    disrupts the "default sequence" by asking JavaScript to run a 
+				    test, decide whether to follow the path, and then move back to 
+				    the default sequence.
+				</li>
+			    </ul>
+			<li>repetition: Given the default order (or "sequence"), can we choose to do 
+			    something until a condition is met or until code has run some number of 
+			    times?
+			</li>
+			    <ul>
+				<li>Repetition lets us disrupt default flow by repeating. The while 
+				    loop, which we will introduce formally in a few lessons, means 
+				    "do something while (or "as long as") some condition is true." 
+				    That "something" is held inside a code block
+				</li>
+			    </ul>
+		    </ul>
+		<li>If we want to comment out multiple lines, we can either place the comment marker 
+		    at the beginning of each line, or we can wrap the lines with /* and */
+		</li>
+		<li>Conditional statements enable us to execute code if a certain condition is true 
+		    (or false). Some real-life examples might look like:<br/>
+
+		    if hungry → make a meal.<br/>
+			else → don't make a meal.<br/>
+		    You might also hear this referred to as control flow because it helps control the 
+		    flow (i.e., sequence) of an application.
+		</li>
+		<li>if</li>
+		    <ul>
+			<li>const age = 30;<br/>
+			    <br/>
+			    let isAdult;<br/>
+			    <br/>
+			    if (age >= 18) {<br/>
+			      isAdult = true;<br/>
+			    }<br/>
+			    <br/>
+			    isAdult;
+			</li>
+		    </ul>
+		<li>if, else</li>
+		    <ul>
+			<li>const age = 14;<br/>
+			    <br/>
+			    let isAdult;<br/>
+			    <br/>
+			    if (age >= 18) {<br/>
+			      isAdult = true;<br/>
+			    } else {<br/>
+			      isAdult = false;<br/>
+			    }<br/>
+			    <br/>
+			    isAdult;<br/>
+			</li>
+		    </ul>
+		<li>ternary</li
+		    <ul>
+			<li>const age = 14;<br/>
+			    <br/>
+			    let isAdult;<br/>
+			    <br/>
+			    age >= 18 ? (isAdult = true) : (isAdult = false);<br/>
+			    <br/>
+			    isAdult;
+			</li>
+		    </ul>
+		<li>else, if</li>
+		    <ul>
+			<li>const age = 20;<br/>
+			    <br/>
+			    let isAdult, canWork, canEnlist, canDrink;<br/>
+			    <br/>
+			    if (age >= 21) {<br/>
+			      canWork = true;<br/>
+			      canEnlist = true;<br/>
+			      isAdult = true;<br/>
+			      canDrink = true;<br/>
+			    } else if (age >= 18) {<br/>
+			      canWork = true;<br/>
+			      canEnlist = true;<br/>
+			      isAdult = true;<br/>
+			    } else if (age >= 16) {<br/>
+			      canWork = true;<br/>
+			    }<br/>
+			    <br/>
+			    canWork;<br/>
+			    //canEnlist;<br/>
+			    //isAdult;<br/>
+			    //canDrink;
+			</li>
+		    </ul>
+		<li>nested if</li>
+		    <ul>
+			<li>const age = 17;<br/>
+			    <br/>
+			    let isAdult, canWork, canEnlist, canDrink;<br/>
+			    <br/>
+			    if (age >= 16) {<br/>
+			      canWork = true;<br/>
+			    <br/>
+			      if (age >= 18) {<br/>
+			        isAdult = true;<br/>
+			        canEnlist = true;<br/>
+			    <br/>
+			        if (age >= 21) {<br/>
+			          canDrink = true;<br/>
+			        }<br/>
+			      }<br/>
+			    }<br/>
+			    <br/>
+			    canWork;
+		 	</li>
+		    </ul>
+		<li>switch statement: The switch statement provides an alternate way of expressing 
+		    conditional code that is less repetitive in cases where you want to test multiple 
+		    conditions against a single value.
+		</li>
+		    <ul>
+			<li>if else version</li
+			    <ul>
+				<li>const name = "Alice";<br/>
+				    let greeting;<br/>
+				    <br/>
+				    if (name === "Alice") {<br/>
+				      greeting = "Hello, Alice!"<br/>
+				    } else if (name === "The White Rabbit") {<br/>
+				      greeting = "Don't be late, White Rabbit"<br/>
+				    } else if (name === "The Mad Hatter") {<br/>
+				      greeting = "Welcome to the tea party, Mad Hatter"<br/>
+				    } else if (name === "The Queen of Hearts") {<br/>
+				      greeting = "Please don't chop off my head!"<br/>
+				    } else {<br/>
+				      greeting = "Whoooo are you?"<br/>
+				    }<br/>
+				    <br/>
+				    greeting;<br/>
+				    //=> "Hello, Alice!"
+				</li>
+			    </ul>
+			<li>switch version</li>
+			    <ul>
+				<li>const name = "Alice";<br/>
+				    let greeting;<br/>
+				    <br/>
+				    switch (name) {<br/>
+				      case "Alice":<br/>
+				        greeting = "Hello, Alice!";<br/>
+				        break;<br/>
+				      case "The White Rabbit":<br/>
+				        greeting = "Don't be late, White Rabbit";<br/>
+				        break;<br/>
+				      case "The Mad Hatter":<br/>
+				        greeting = "Welcome to the tea party, Mad Hatter";<br/>
+				        break;<br/>
+				      case "The Queen of Hearts":<br/>
+				        greeting = "Please don't chop off my head!";<br/>
+				        break;<br/>
+				      default:<br/>
+				        greeting = "Whoooo are you?";<br/>
+				    }<br/>
+				    <br/>
+				    greeting;
+				</li>
+			    </ul>
+		    </ul>
+		<li>default: The default keyword is similar to the else clause in an if...else 
+		    construction. It specifies a set of statements to run after all of the switch 
+		    statement's cases have been checked. However, it is different from an else in 
+		    that the only time it does not run is if the engine hits a break in one of the 
+		    case statements. If you only want one code block in your switch statement to 
+		    execute, you should always include the break keyword.
+		</li>
+		<li>break: In the previous example, break is used to stop the switch statement from 
+		    continuing to look at case statements once it finds a match. If we left out the 
+		    break keywords, the JavaScript engine would first assign characterType to "dwarf" 
+		    when it reached the "Grumpy" case (as desired), but the code would continue to 
+		    execute and characterType would wind up being reset to "minor character." To keep 
+		    that from happening, we use break to tell the JavaScript engine to stop executing 
+		    the switch statement as soon as it finds a match. You will often see switch 
+		    statements where break is used in every case as a way to ensure there is no 
+		    unexpected behavior from multiple cases executing.
+		</li>
+		<li>A basic while loop looks like:<br/>
+		    <br/>
+		    while (condition expression) {<br/>
+		     // stuff to do<br/>
+		    }
+		</li>
+		<li>count += 1 means count = count + 1<br/>
+		    Unsurprisingly -= does the reverse of +=: it "decrements" the variable's value 
+		    and re-assigns the new value to the variable. JavaScript has a number of other 
+		    assignment operators (Links to an external site.) that allow you to use 
+		    multiplication (*=), division (/=), and a variety of other operations.
+		</li>
+		<li>the increment and decrement operators (Links to an external site.), ++ and --.</li>
+		<li>do while:<br/>
+		    do { <br/>
+		      console.log(`I will execute once`);<br/>
+		    } while (false);<br/>
+		</li>
+		<li>In the line of code above, we are using string interpolation to inject the values 
+		    of the name and height variables into the message. Recall that, for this to work, 
+		    you have to wrap the entire string in backticks and wrap the variables themselves 
+		    in ${}. If you'd like a refresher, try leaving out the ${}s or switching to a 
+		    different type of quotes and run your code again to see what the value of message 
+		    is. The backticks and the ${} tell Javascript to grab the value inside the 
+		    variable, not just that variable name.
+		</li>
+		<li>function sayHelloToBrendan() {<br/>
+		        console.log("Hello, Brendan!");<br/>
+		      }
+		    <br/>
+		      sayHelloToBrendan();
+		</li>
+		<li>function doSomething(thing) {<br/>
+		      console.log(thing);<br/>
+		    }<br/>
+		    <br/>
+		    doSomething("anything"); // passing the argument 'anything' into our function
+		</li>
+		<li>A parameter is a placeholder that stores whatever value gets passed in as an 
+		    argument.
+		</li>
+		<li>array: ordered list: a collection that holds multiple pieces of data under a 
+		    single name
+		</li>
+		    <ul>
+			<li>const theBeatles = [<br/>
+			      "John Lennon",<br/>
+			      "Paul McCartney",<br/>
+			      "Ringo Starr",<br/>
+			      "George Harrison",<br/>
+			    ];
+			</li>
+		    </ul>
+		<li>array element: individual pieces of data in an array</li>
+		<li>array index: the number associated with each array element.(starts at 0)</li>
+		<li>object: lookup tables or dictionaries: is a collection data type that holds 
+		    multiple pieces of data under a collected name whose members can be read and 
+		    updated by using a key instead of an index.
+		</li>
+
+		<li>collection data types vs scalar data types</li>
+		    <ul>
+			<li>collection data types; because collection types can't be put on a scale 
+			    they are not scalar data types
+			</li>
+		    </ul>
+		<li>Mutability: Some methods update or mutate the object they are called on; these 
+		    methods are referred to as destructive. Other methods, known as nondestructive 
+		    methods, leave the object intact. For example, the String method toUpperCase() is 
+		    nondestructive
+		</li>
+		<li>.push() adds elments to the end of an array<br/>
+		<li>.unshift() adds elements to the beggining of an array. for example:</li>
+		    <ul>
+			<li>const array = [1, 2, 3, 4];<br/>
+			    array.push(5);<br/>
+			    array;<br/>
+			    //=>[1, 2, 3, 4, 5]<br/>
+			    array.unshift(0);<br/>
+			    array;<br/>
+			    //=>[0, 1, 2, 3, 4, 5]<br/>
+			</li>
+		    </ul>
+		<li>the spread operator(...): creastes a copy of an existing array.</li>
+		    <ul>
+			<li>const array = [1, 2, 3, 4]
+			    const arrayTwo = [...array];
+			    arrayTwo;
+			    //=>[1, 2, 3, 4]
+			</li>
+			<li>another thing the spread operator can do is add things to the copy. like so:<br/>
+			    const array = [2, 3, 4];
+			    const arrayTwo = [0, 1, ...array];
+			    array;
+			    //=>[2, 3, 4]
+			    arrayTwo;
+			    //=>[0, 1, 2, 3, 4]
+			    const arrayThree = [...arrayTwo, 5, 6, 7];
+			    arrayThree;
+			    //=>[0, 1, 2, 3, 4, 5, 6, 7]
+			</li>
+		    </ul>
+		<li>to remove elements from an array .pop() removes things from the back of am array
+		    and, .shift() removes thing from the front of an array.</li>
+		<li>.slice(): nondestructive method</li>
+		    <ul>
+			<li>const primes = [2, 3, 5, 7];
+			    const copyOfPrimesUsingSlice = primes.slice();
+			    const copyOfPrimes = primes.slice();
+			    primes;
+			    // => [2, 3, 5, 7]
+			    copyOfPrimes;
+			    // => [2, 3, 5, 7]
+			    const copyOfPrimesUsingSpreadOperator = [...primes];
+			    primes.push(11);
+			    // => 5
+			    primes;
+			    // => [2, 3, 5, 7, 11]
+			    copyOfPrimesUsingSlice;
+			    // => [2, 3, 5, 7]
+			    copyOfPrimesUsingSpreadOperator;
+			    // => [2, 3, 5, 7]
+			</li>
+			<li>const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+			    days.slice(2, 5);
+			    // => ["Wed", "Thu", "Fri"]
+			</li>
+			<li>If no second argument is given it will continue to the end of the array</li>
+			<li>To return a new Array with the first element removed, we call .slice(1)</li>
+		    </ul>
+		<li>.splice(): destructive method, allows us to remove elements, add elements, or replace elements (or any 
+		    combination of the three).
+		</li>
+		    <ul>
+			<li>The first argument expected by .splice() is the index at which to begin 
+			    the splice. If we only provide the one argument, .splice() will 
+			    destructively remove a chunk of the original Array beginning at the 
+			    provided index and continuing to the end of the Array
+			</li>
+			    <ul>
+				<li>arrayName.splice(2): will remove from array index 2 to the end of 
+				    the array
+				</li>
+				<li>arrayName.splice(-2): will remove the last 2 array elements</li>
+			    </ul>
+			<li>with two arguments(arrayName.splice(where to start, how many to delete)</li>
+			    <ul>
+				<li>const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];<br/>
+				    // => ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]<br/>
+				    days.splice(2, 3);<br/>
+				    // => ["Wed", "Thu", "Fri"]<br/>
+				    days;<br/>
+				    // => ["Mon", "Tue", "Sat", "Sun"]<br/>
+				</li>
+			    </ul>
+			<li>array.splice(start, deleteCount, item1, item2, ...): After the first two, 
+			    every additional argument passed to .splice() will be inserted into the 
+			    Array at the position indicated by the first argument.
+			</li>
+			<li> by passing 0 in to the second argument we won't delete any items, an we'll only add items starting at the index number defined by the first argument
+		    </ul>
+		<li>bracket notation to replace items</li>
+		    <ul>
+			<li>const cards = [<br/>
+			      "Ace of Spades",<br/>
+			      "Jack of Clubs",<br/>
+			      "Nine of Clubs",<br/>
+			      "Nine of Diamonds",<br/>
+			      "Three of Hearts",<br/>
+			    ];<br/>
+			    cards[2] = "Ace of Clubs";
+			</li>
+		    <ul/>
+		<li>object key: object version of an array index.</li>
+		<li>object value: object version of an array element.</li>
+		    <table>
+			<tr>
+		    	    <th>Key</th>
+			    <th>Value</th>
+			</tr>
+			<tr>
+			    <td>liverpool</td>
+			    <td>The Beatles</td>
+			</tr>
+			<tr>
+			    <td>manchester</td>
+			    <td>The Smiths<?td>
+			</tr>
+			<tr>
+			    <td>coventry</td>
+			    <td>Delia Derbyshire and the BBC Radiophonic Band</td>
+			</tr>
+			<tr>
+			    <td>london</td>
+			    <td>Ziggy Stardust and the Spiders from Mars</td>
+			</tr>
+		    </table>
+		    <ul>
+			<li>in java script this table would be written like this:</li>
+			<li>const englishBandsByCity = {<br/>
+			      liverpool: "The Beatles",<br/>
+			      manchester: "The Smiths",<br/>
+			      coventry: "Delia Derbyshire and the BBC Radiophonic Band",<br/>
+			      london: "Ziggy Stardust and the Spiders from Mars",<br/>
+			    };
+			</li>
+			<li>to define an object:<br/>
+			    const obj = {<br/>
+			      key1: value1,<br/>
+			      key2: {<br/>
+			        innerKey1: innerValue1,<br/>
+			        innerKey2: innerValue2,<br/>
+			      },<br/>
+			    };<br/>
+			    <br/>
+			    const address = {<br/>
+			    street: {<br/>
+			    line1: "961 S Ivory Cir",<br/>
+			    line2: "Floor 2, Apt F",<br/>
+			    },<br/>
+			    city: "Aurora",<br/>
+			    state: "CO",<br/>
+			    zipCode: "80017",<br/>
+			    };
+			</li>
+			<li>The values can be the same, but the key(index) must be different. if you 
+			    write the same key, all previos lines will be overwritten, leaving only 
+			    the last line.
+			</li>
+			<li>Dot Notation</li>
+	`		    <ul>
+				<li>object.key; is how to access a value in an object.</li>
+				<li>object.key.innerKey; is how to access a nessted value within an object</li>
+			    </ul>
+			<li>bracket notation</li>
+			    <ul>
+				<li>object["key"]; or</li>
+				<li>object["key"]["innerKey"];</li>
+			    </ul>
+			<li>you can use a string for the key, butyou can only acces it with bracket notation</li>
+			<li>address["zip" + "Code"]; also workst to recall a value.</li>
+			<li>const meals = {<br/>
+			      breakfast: "Oatmeal",<br/>
+			      lunch: "Caesar salad",<br/>
+			      dinner: "Chimichangas",<br/>
+			    };<br/>
+			    let mealName = "lunch";<br/>
+			    meals[mealName];<br/>
+			    //=> "Caesar salad"<br/>
+			<li>const morningMeal = "breakfast";<br/>
+			    const middayMeal = "lunch";<br/>
+			    const eveningMeal = "dinner";<br/>
+			    const meals = {<br/>
+			      [morningMeal]: "French toast",<br/>
+			      [middayMeal]: "Personal pizza",<br/>
+			      [eveningMeal]: "Fish and chips",<br/>
+			    };<br/>
+			    meals;<br/>
+			    //=> { breakfast: "French toast", lunch: "Personal pizza", dinner: "Fish and chips" }
+			</li>
+			<li>add an object property using dot or bracket notation</li>
+			    <ul>
+				<li>const circle = {}<br/>
+				    circle;<br/>
+				    //=> {}<br/>
+				    circle.radius = 5;<br/>
+				    circle;<br/>
+				    //=>{ radius: 5 }
+				</li>
+				<li>const circle = {};<br/>
+				    circle.radius = 5;<br/>
+				    circle["diameter"] = 10;<br/>
+				    circle.circumfrence = circle.diameter * Math.PI;<br/>
+				    circle["area"] =Math.PI * circle.radius ** 2;<br/>
+				    circle;<br/>
+				    //=> { radius: 5, diameter: 10, circumfrence: 31.41592653589793
+				    , area: 78.53981633974483 }
+				</li>
+			    </ul>
+			<li>Modify a Property Using Dot or Bracket Notation</li>
+			    <ul>
+				<li>the destructive method:<br/>
+				    const mondayMenu = {<br/>
+				      cheesePlate: {<br/>
+				        soft: "Chèvre",<br/>
+				        semiSoft: "Gruyère",<br/>
+				        hard: "Manchego",<br/>
+				      },<br/>
+				      fries: "Curly",<br/>
+				      salad: "Cobb",<br/>
+				    };<br/>
+				    mondayMenu.fries = "Sweet potato";<br/>
+				    mondayMenu;<br/>
+				    //=> { cheesePlate: { soft: "Chèvre", semiSoft: "Gruyère", hard: 
+				    "Manchego" }, fries: "Sweet potato", salad: "Cobb" }
+				</li>
+				<li>delete object.key; will destructively delete a key and value</li>
+				<li>An example:<br/>
+				    function destructivelyUpdateObject(obj, key, value) {<br/>
+				      obj[key] = value; //Why are we using bracket notation here?<br/>
+				      return obj;<br/>
+				    }
+				</li>
+				<li>the nondestructive method Using the Spread Operator:<br/>
+				    function nondestructivelyUpdateObject(obj, key, value) {<br/>
+				      // Code to return new, updated menu object<br/>
+				    }<br/>
+				    function nondestructivelyUpdateObject(obj, key, value) {<br/>
+				      const newObj = { ...obj };<br/>
+				      newObj[key] = value;
+				      return newObj;<br/>
+				    }<br/>
+				    const sundayMenu = nondestructivelyUpdateObject(<br/>
+				      tuesdayMenu,<br/>
+				      "fries",<br/>
+				      "Shoestring"<br/>
+				    );<br/>
+				    tuesdayMenu.fries;<br/>
+				    //=> "Sweet potato"<br/>
+				    sundayMenu.fries;<br/>
+				    //=> "Shoestring"
+				</li>
+				<li>Note: The spread operator has been around for a while, but 
+				    there's still a chance you'll encounter similar code written 
+				    using another method, Object.assign() (Links to an external 
+				    site.). Like the spread operator, Object.assign allow us to 
+				    combine properties from multiple Objects into a single Object.
+				</li>
+
+			    </ul>
+			<li>You see, one of the 'special' features of an Array is that its 
+			    Array-style elements are stored separately from its Object-style 
+			    properties. The .length property of an Array describes how many 
+			    items exist in its special list of elements. Its Object-style 
+			    properties are not included in that calculation.
+			<li>
+		    </ul>
+		<li>the for loop</li>
+		    <ul>
+			<li>for ([initialization]; [condition]; [iteration]) {
+			      [loop body]
+			    }
+			</li>
+			<li>Initialization: Typically used to initialize a counter variable.</li>
+			<li>Condition: An expression evaluated before each pass through the loop. If 
+			    this expression evaluates to true, the statements in the loop body are 
+			    executed. If the expression evaluates to false, the loop exits.
+			</li>
+			<li>Iteration: An expression executed at the end of each iteration. 
+			    Typically, this will involve incrementing or decrementing a counter, 
+			    bringing the loop ever closer to completion.
+			</li>
+			<li>Loop body: Code that runs on each pass through the loop.</li>
+		    </ul>
+		<li>for...of looks like:</li>
+		</li>
+		    <ul>
+			<li>const myArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g'];
+			    for (const element of myArray) {
+			      console.log(element);
+			    }
+			</li>
+			<li>for...of lets us use const. In for and while statements, let is required 
+			because we are incrementing a counter variable.
+			</li>
+			<li>for...of is for iterating over an array.</li>
+		    </ul>
+		<li>for...in looks like:<?li>
+		    <ul>
+			<li>for (const [KEY] in [OBJECT]) {
+			      // Code in the statement body
+			    }
+			</li>
+			<li>const address = {<br/>
+			      street1: '11 Broadway',<br/>
+			      street2: '2nd Floor',<br/>
+			      city: 'New York',<br/>
+			      state: 'NY',<br/>
+			      zipCode: '10004',<br/>
+			    };<br/>
+			    for (const key in address) {<br/>
+			      console.log(key);<br/>
+			    }<br/>
+			    // LOG: street1<br/>
+			    // LOG: street2<br/>
+			    // LOG: city<br/>
+			    // LOG: state<br/>
+			    // LOG: zipCode
+			</li>
+			<li>const address = {<br/>
+			      street1: '11 Broadway',<br/>
+			      street2: '2nd Floor',<br/>
+			      city: 'New York',<br/>
+			      state: 'NY',<br/>
+			      zipCode: "10004"<br/>
+			    };<br/>
+			    for (const key in address) {<br/>
+			      console.log(address[key]);<br/>
+			    }<br/>
+			    // LOG: 11 Broadway<br/>
+			    // LOG: 2nd Floor<br/>
+			    // LOG: New York<br/>
+			    // LOG: NY<br/>
+			    // LOG: 10004
+			</li>
+			<li>with the dot operator: will come back undefined, so you have to define address.key:<br/>
+			    address.key = "Let's have a 'key' key!";<br/>
+			    for (const key in address) {<br/>
+			      console.log(address.key);<br/>
+			    }<br/>
+			    // LOG: Let's have a 'key' key!<br/>
+			    // LOG: Let's have a 'key' key!<br/>
+			    // LOG: Let's have a 'key' key!<br/>
+			    // LOG: Let's have a 'key' key!<br/>
+			    // LOG: Let's have a 'key' key!<br/>
+			    // LOG: Let's have a 'key' key!
+			</li>
+			<li>Use a for...in statement whenever you want to enumerate the properties of an object.</li>
+		    </ul>
+		<li>Dom</li>
+		    <ul>
+			<li>document.getElementById(): must know the ID to use this method.</li>
+			<li>document.getElementsByClassName(): since, unlike ID's where they have to be unique, there can be multiple class names. This 
+			    method will return an HTMLCollection of all the elements with the given task.</li>
+			</li>
+			<li>document.getElementsByTagName(): this method is for if you don't know any ID's or class names</li>
+			<li>querySelector() and querySelectorAll() use a CSS selector as the argument</li>
+			<li>document.createElement('tagName'): tagName is the name of any valid html tag.</li>
+			<li>append(): document.body.append(element)</li>
+			<li>element.innerHTML examples:</li>
+			    <ul>
+				<li>element.style.height = "300px";</li>
+				<li>element.style.backgroundColor = "#27647B";
+				<li>element.textContent = "You've changed what's on the screen!";</li>
+				<li>element.style.fontSize = "24px";</li>
+				<li>element.style.marginLeft = "30px";</li>
+				<li>element.style.lineHeight = 2;</li>
+			    </ul>
+		    </ul>
+		<li>addEventListener(): In order for JavaScript to handle an event, we first need to tell it to listen for that event. We do this by 
+		    calling the addEventListener() method on the element we want to add the listener to, and passing it two arguments:<br/>
+		    1. the name of the event to listen for, and<br/>
+		    2. a callback function to "handle" the event
+		<li>
+	    </ol>
+	<section>
+    </body>
+</html>

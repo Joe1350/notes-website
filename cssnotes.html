@@ -1,0 +1,178 @@
+<!doctype html>
+<html>
+    <head>
+	<title>CSS Notes</title>
+ <style>
+		.white {color: #ffffff;}
+	    </style>
+	    <style>
+		section {background-color: #46b546;}
+		h3 {background-color: #538eec;}
+		h1 {background-color: #e65151;}
+	    </style>
+	    <style>
+		li {font-size: 16px;}
+		.large-text {font-size: 32px;}
+	    </style>
+    </head>
+    <body>
+	<p>
+	    <a href="noteshome.html">Home</a>
+	    <a href="htmlnotes.html">HTML</a>
+	    <a href="cssnotes.html">CSS</a>
+	    <a href="clinotes.html">CLI</a>
+	    <a href="githubnotes.html">GitHub</a>
+	</p>
+	<section>
+	<h2>Cascading Style Sheets</h2>
+	    <ol>
+		<li>rules</li>
+		    <ul>
+			<li>selector</li>
+			<li>property</li>
+			<li>value</li>
+			<li>property+value=declaration</li>
+		    </ul>
+	<section class="white">
+		<li>text color(color)</li>
+		    <ul>
+			<li>&#60;element class="descriptor"&#62; text &#60;/element&#62; / .descriptor{color: #hexcode;}</li>
+			<li>descriptor=property(does it?)</li>
+			<li>#hexcode=value</li>
+		    </ul>
+	</section>
+		<li>background color(background-color)</li>
+		    <ul>
+			<li>&#60;element class="descriptor"&#62; text &#60;/element&#62; / element {background-color: #hexcode;}</li>
+		    </ul>
+		<li class="large-text">text size(font-size)</li>
+		    <ul>
+			<li class="large-text">&#60;element class="descriptor"&#62; text &#60;/element&#62; / element {font-size: ##px} .descriptor{font-size: ##px;}</li>
+			<li class="large-text">must also set standard font size</li>
+		    </ul>
+		<li>font-size is used to change the size of text in an element. It expects a numeric value along with a unit (px, em, rem)</li>
+		<li>text-transform is a great way to change the capitalization. Values include capitalize, lowercase, uppercase, and initial</li>
+		<li>text-decoration is primarily used with the underline and line-through values to create underlined and “strike through” effects</li>
+		<li>font-style is almost always used to italicize textfont-family expects a list of fonts to “try” from left to right. More on this below.</li>
+		<li>line-height defines the space above and below a line of text. It expects a numeric value along with a unit of measurement using px, em, rem, etc.</li>
+		<li>letter-spacing defines the space between each letter in an element, and accepts the same values as line-height</li>
+		<li>letter spacing property</li>
+		    <ul>
+			<li></li>
+		<li>/*
+		    The CSS comment syntax is text between "slash-star" and "star-slash"
+		    */
+		</li>
+		<li>compound selectors:
+		    h2,
+		    h3 {
+		      color: green;
+		    }
+		    <h2>I'm green</h2>
+		    <h3>I'm green too</h3>
+		    <h4>I'm not green</h4>
+		</li>
+		<li>descendent selectors
+		    article p {
+		      color: blue;
+		    }
+		    In this case, only p elements within the article element will receive the styling.
+		    <article>
+		      <p>I'm blue</p>
+		    </article>
+
+		    <p>I'm not blue</p>
+		</li>
+		<li>child selectors
+		    article > p {
+		      color: blue;
+		    }
+		    Only p tags exactly one level down from article will display as blue. If there are p tags within an aside element within the article element, they will not receive the same instructions.
+		    <article>
+		      <p>I'm blue</p>
+		    </article>
+
+		    <article>
+		      <aside>
+		        <p>I'm not blue</p>
+		      </aside>
+		    </article>
+		</li>
+		<li>adjacent sibling selector
+		    h3 + p {
+		      color: blue;
+		    }
+		    Here the adjacent sibling selector will style the paragraph directly following an h3 element but not paragraphs that come after the first.
+		    <h3>Header</h3>
+		    <p>I'm blue</p>
+		    <p>I'm not blue</p>
+		</li>
+		<li>general sibling selector
+		    h3 ~ p {
+		      color: red;
+		    }
+		    With this general sibling selector, all paragraph elements that come after the h3 will receive the styling.
+		    <h3>Header</h3>
+		    <p>I'm red</p>
+		    <p>I'm red</p>
+		</li>
+		<li>universal
+		    * {
+		      color: yellow;
+		    }
+		    In this case, this is going to set the color of the text yellow for any element that hasn't had its color property specified elsewhere.
+		    <h2>I'm yellow</h2>
+		    <p>I'm yellow</p>
+		    <div>I'm yellow</div>
+		</li>
+		<li>attribute selectors
+		    input[type="text"] {
+		      width: 200px;
+		    }
+		    Here we want to find input elements, but only those with a type value that matches "text." For those elements that fit the requirements, the browser will then apply the width we want. 
+		    <input type="text" value="I'm 200px" />
+		    <input type="submit" value="I'm not 200px" />
+		</li>
+		<li>pseudo-class selectors
+		    a:link {
+		      color: blue;
+		    }
+		    a:visited {
+		      color: purple;
+		    }
+		    These two link examples reflect the way links that are both unvisited and visited will be displayed differently. If the link is unvisited, it will show as blue. If it has been visited, it will show up purple. Pseudo-class selectors, like attribute selectors, have a lot of aspects so you can explore them more in other resources.
+		    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes">
+		      I'm blue before you click, and purple after
+		    </a>
+		</li>
+		<li>hexadecimal<br/>
+		    Decimal Numbers:      0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16<br/>
+		    Hexadecimal Numbers:  0, 1, 2, 3, 4, 5, 6, 7, 8, 9,  a,  b,  c,  d,  e,  f, 10
+		    Hex colors work by creating Red, Green, Blue (RGB) values. Traditional RGB colors are on a scale of 0 to 255 for 
+		    each of the three colors in the spectrum. #000000 translates to black since 0 reds, 0 green, 0 blues represents 
+		    the absence of all colors and #ffffff makes white since 255 reds, 255 greens, and 255 blues equal the maximum of 
+		    each of the colors.
+		    Hex colors can be shortened to just three numbers when each RGB value is the same for each digit. So #111111 can 
+		    be written as #111.
+		</li>
+		<li>rgb color values
+		    We can also work directly with RGB values.
+		    p {
+		      color: rgb(255, 255, 255);
+		    }
+		    Here we've set our p elements to the color white, the maximum of all RGB values (255).
+		    You can also add an extra channel to your RGB color by setting an "a" value, which represents opacity.
+		    p {
+		      color: rgba(0, 0, 255, 0.5);
+		    }
+		</li>
+		<li>css comments
+		    p.alert {
+		      color: #ff0000; /* Alert text displays red */
+		    }
+		</li>
+  	    </ol>
+	</section>
+	<footer>*strikethrough means I do not entirely understand it*</footer>
+</body
+</html>

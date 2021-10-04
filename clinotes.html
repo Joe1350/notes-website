@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+    <head>
+	<title>CLI</title>
+	    <style>
+		.white {color: #ffffff;}
+	    </style>
+	    <style>
+		section {background-color: #46b546;}
+		h3 {background-color: #538eec;}
+		h1 {background-color: #e65151;}
+	    </style>
+	    <style>
+		li {font-size: 16px;}
+		.large-text {font-size: 32px;}
+	    </style>
+    <head>
+    <body>
+	<p>
+	    <a href="noteshome.html">Home</a>
+	    <a href="htmlnotes.html">HTML</a>
+	    <a href="cssnotes.html">CSS</a>
+	    <a href="clinotes.html">CLI</a>
+	    <a href="githubnotes.html">GitHub</a>
+	</p>
+	<section>
+	<h2>Command-Line Interface</h2>
+	    <ol>
+		<li>bash is a text based interperter that provides a cli for controlling your computer or operating system</li>
+		    <ul>
+			<li>Bourne-Again SHell</li>
+			<li>display a list of files inside the active folder(ls)</li>
+			<li>detailed listing(ls -l)</li>
+			<li>sort by file time(ls -t)</li>
+			<li>sort by file size(ls -S)</li>
+			<li>reverse the sorting(ls -lSr or ls -ltr)</li>
+			<li>see hidden files(ls -a)</li>
+			<li>current folder(.)</li>
+			<li>parent folder(..)</li>
+		    </ul>
+		<li>change directories(cd)</li>
+		<li>previous directory(cd -)</li>
+		<li>create folder(mkdir &#60foldername&#62</li>
+		<li>remove folder(rmdir &#60foldername&#62</li>
+		    <ul>
+			<li>Note: all files in the folder must be deleted before you can delete the folder.</li>
+		    </ul>
+		<li>create empty file(touch &#60filename&#62)</li>
+		<li>move or rename files(mv)</li>
+		    <ul>
+			<li>move file(mv filename ./path)</li>
+			<li>rename program(mv original_program.rb Renamed_program.rb)</li>
+			<li>you can also combine the two(mv temp_download.gif ~/Desktop/cats_with_weapons/ninja_cat.gif)</li>
+		    </ul>
+		<li>copy files(cp)</li>
+		    <ul>
+			<li>same syntax as (mv)</li>
+			<li>If you want to copy a directory and its file contents, you need to use the -r flag(cp -r  february_cat_gifs ~/Desktop/vital_media_files)</li>
+		    </ul>
+		<li>remove file(rm &#60filename&#62)</li>
+		    <ul>
+			<li>remove all files in current directory(rm *)</li>
+			<li>to delete a directory the (-r) flag is needed</li>
+			<li>aditional removal flags</li>
+			    <ol>
+				<li>-i (interactive): Prompts you to confirm the deletion. This option can stop you from deleting a file by mistake.</li>
+				<li>-f (force): Overrides interactive mode and removes the file(s) without prompting. Use this with caution. This action cannot be undone.</li>
+				<li>-v (verbose): Shows the progress of the files as they are being removed.</li>
+			    <ol>
+		    </ul>
+		<li>edit plain text file(nano /path/to/file)</li>
+		<li>display files(cat)</li>
+		    <ul>
+			<li>Note: most likely too big</li>
+		    </ul>
+		<li>more or less commands(more &#60filename&#62 or less &#60filename&#62)</li>
+		<li>logged in username(whoami)</li>
+		<li>current working directory(pwd)</li>
+		<li>home directory(cd ~)</li>
+		<li>(explorer.exe my_file.html)Opens html files in ubuntu in chrome</li>
+	    </ol>
+	</section>
+    </body>
+<html>

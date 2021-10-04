@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+    <head>
+	<title>GIT Notes</title>
+	<style>
+	    section {background-color: #46b546;}
+	    h3 {background-color: #538eec;}
+	    h1 {background-color: #e65151;}
+	</style>
+    </head>
+    <body>
+	<p>
+	    <a href="noteshome.html">Home</a>
+	    <a href="htmlnotes.html">HTML</a>
+	    <a href="cssnotes.html">CSS</a>
+	    <a href="clinotes.html">CLI</a>
+	    <a href="githubnotes.html">GitHub</a>
+	</p>
+	<section>
+	    <h2>GitHub</h2>
+	    <ol>
+		<li>repository (or repo, for short): A directory of files that are tracked by Git.</li>
+		<li>track: When a file is tracked by Git, it means that Git will notice any changes to that file. We call these changes "differences" or "diffs". Git will allow you to choose whether to add the change, or "diff," in order to keep it</li>
+		<li>diff: Short for "difference," the "diff" of a file is all the changes that happened in it since the last commit. The "diff" of a repo is all the diffs in all the tracked files in the repo that have been made, but which have not yet been committed (sometimes programmers call this "the diffset").</li>
+		<li>commit: When a diff is decided to be a good thing to save, we commit the diff to the repo's history using the commit command. When we make a commit we are asked to write a "log" message which describes what happened in the diff. Each commit also knows when it happened and what the repo's "diff" was.</li>
+		<li>log: The record of what happened in each commit</li>
+		<li>local/remote: When we start working with a git repo, we "clone" it from a remote source and have a copy of that directory on our own system. We call the repo on our personal system the local repo. (We'll talk more about the "clone" command later.)</li>
+		<li>default branch: You'll learn in advanced Git that a repo can support multiple branches (we called those "sandboxes" earlier). For the moment, just remember this: by default, when you create a Git repo, you will be working on the default branch. The name of this branch may be either main or master, depending on your configuration.</li>
+		<li>branch: The combined history of all the changes of all the files in the repo.</li>
+		<li>(git init)creates a protected directory</li>
+		<li>(rm -rf .git)return the directory to unprotected</li>
+		<li>(git status) shows us the changes</li>
+		<li>(git add)tracks/stages a file</li>
+		<li>(git commit)commit changes</li>
+		<li>(git clone)py a repository to your local machine</li>
+		<li>(git remote)list remotes</li>
+		<li>The important take away is to not misuse the words "fork" and "clone" when speaking with other Git users. To get a local copy: clone; to make an online copy of a repository to your personal organization so that you have the ability to update its master (or main) branch, fork.</li>
+		<li>(git push)sends code from the local repo to the remote repo</li>
+		<li>git push requires two commands</li>
+		    <ul>
+			<li>short name for remote repo(origin)</li>
+			<li>the name of the remote branch you want to send code to(main)</li>
+		    </ul>
+		<li>(-u)flag to tell Git to "save" the remote repository as the default push destination for your current branch.</li>
+	    </ol>
+	</section>
+    </body>
+</html>
